@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h4>Online Member User ID Registration</h4>
+    <hr>
+
+    <p>Please supply the following information as reported to the Social Security System</p>
+
+<form id="registrationForm"><pre>
+<label for="crn_ss">CRN/SS  :</label><input type="text" id="crn_ss" name="crn_ss" pattern="[0-9]{10,12}" required><span class="error" id="crn_ss_error"></span> </pre> 
+<pre><label for="email">Email  :</label><input type="email" id="email" name="email" required><span class="error" id="email_error"></span> </pre> <pre>
+<label for="confirm_email">Confirm Email  :</label><input type="email" id="confirm_email" name="confirm_email" required><span class="error" id="confirm_email_error"></span></pre><br><pre>
+<label for="user_id">Preferred User ID  :</label><input type="text" id="user_id" name="user_id" minlength="8" maxlength="20" required><span class="error" id="user_id_error"></span> </pre>
+ <pre><label for="confirm_user_id">Confirm Preferred User ID  :</label><input type="text" id="confirm_user_id" name="confirm_user_id" required><span class="error" id="confirm_user_id_error"></span></pre><br><pre>
+<label for="surname">Surname  :</label><input type="text" id="surname" name="surname" required>
+<span class="error" id="surname_error"></span></pre><pre>
+<label for="given_name">Given Name  :</label><input type="text" id="given_name" name="given_name" required>
+<span class="error" id="given_name_error"></span></pre>
+ <pre><label for="middle_name">Middle Name  :</label><input type="text" id="middle_name" name="middle_name"></pre>
+ <pre><label for="birthdate">Date of Birth  :</label><input type="date" id="birthdate" name="birthdate" required><span class="error" id="birthdate_error"></span></pre>
+
+    <pre>Mailing Address</pre>
+    <br>
+
+    
+    <pre><label for="room">Room/Floor/Unit No. & Building Name :</label><input type="text" id="room" name="room" required><span class="error" id="room_error"></span></pre>
+
+    <pre><label for="house">House/Lot & Block No. :</label><input type="text" id="house" name="house" required> <span class="error" id="house_error"></span></pre>
+
+    <pre><label for="street">Street Name :</label><input type="text" id="street" name="street" required><span class="error" id="street_error"></span> </pre>
+
+    <pre><label for="subdivision">Subdivision/Village :</label><input type="text" id="subdivision" name="subdivision" required><span class="error" id="subdivision_error"></span></pre>
+
+    
+    <pre><input type="checkbox" id="metro" name="location" value="Metro Manila"><label for="metro">Metro Manila</label><input type="checkbox" id="province" name="location" value="Province"><label for="province">Province</label><span class="error" id="location_error"></span></pre>
+
+    <button type="submit">Submit</button>
+
+</form>
+
+
+</body>
+</html>

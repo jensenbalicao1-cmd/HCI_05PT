@@ -1,0 +1,91 @@
+  :root{
+    --bg:#F5F8FC;
+    --surface:#FFFFFF;
+    --ink:#122641;
+    --ink-soft:#5B6B85;
+    --primary:#0B4DA2;
+    --primary-dark:#083B7E;
+    --border:#D7DEEA;
+    --border-strong:#B9C4D6;
+    --required:#C0372C;
+    --error-bg:#FBEAE8;
+    --error-border:#E3A8A1;
+    --success:#1C7C54;
+    --success-bg:#E7F5EE;
+    --radius:10px;
+  }
+  *{ box-sizing:border-box; }
+  html,body{ margin:0; padding:0; }
+  body{
+    background:var(--bg);
+    font-family:'Inter', sans-serif;
+    color:var(--ink);
+    padding:36px 16px 60px;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{ max-width:640px; margin:0 auto; }
+
+  .masthead{ margin-bottom:28px; }
+  .masthead .agency{ font-size:0.78rem; font-weight:600; color:var(--primary); letter-spacing:0.02em; margin-bottom:6px; }
+  h1{ font-size:1.55rem; font-weight:800; margin:0 0 10px; line-height:1.25; }
+  .masthead p{ margin:0; font-size:0.92rem; color:var(--ink-soft); line-height:1.5; max-width:480px; }
+
+  .req-note{ font-size:0.82rem; color:var(--ink-soft); margin:18px 0 22px; display:flex; align-items:center; gap:6px; }
+  .req-note .star{ color:var(--required); font-weight:700; }
+
+  form{ display:flex; flex-direction:column; gap:0; }
+
+  fieldset{ border:none; margin:0 0 30px; padding:0; }
+  legend{ font-size:1.08rem; font-weight:700; padding:0 0 6px; margin-bottom:14px; border-bottom:1px solid var(--border); width:100%; }
+
+  .field{ margin-bottom:18px; }
+  .field label{ display:block; font-size:0.88rem; font-weight:600; margin-bottom:5px; }
+  .field label .star{ color:var(--required); margin-left:2px; }
+  .hint{ font-size:0.78rem; color:var(--ink-soft); margin:4px 0 0; line-height:1.45; }
+  .hint b{ color:var(--ink); font-weight:600; }
+
+  input[type=text], input[type=email], input[type=date], select{
+    width:100%; padding:11px 13px; border:1px solid var(--border-strong); border-radius:var(--radius);
+    background:var(--surface); font-size:0.93rem; color:var(--ink); font-family:inherit; outline:none;
+    transition:border-color .15s ease, box-shadow .15s ease;
+  }
+  input::placeholder{ color:#9AA7BC; }
+  input:focus, select:focus{ border-color:var(--primary); box-shadow:0 0 0 3px rgba(11,77,162,0.14); }
+  input:focus-visible, select:focus-visible, button:focus-visible, .radio-card:focus-within{
+    outline:2px solid var(--primary); outline-offset:2px;
+  }
+
+  .field.invalid input, .field.invalid select{ border-color:var(--error-border); background:var(--error-bg); }
+  .field.valid input, .field.valid select{ border-color:var(--success); }
+  .error-msg{ display:none; font-size:0.8rem; color:var(--required); margin-top:5px; font-weight:500; }
+  .field.invalid .error-msg{ display:block; }
+
+  .two-col{ display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+  @media (max-width:520px){ .two-col{ grid-template-columns:1fr; } }
+
+  .radio-group{ display:flex; gap:10px; flex-wrap:wrap; }
+  .radio-card{
+    flex:1; min-width:150px; border:1px solid var(--border-strong); border-radius:var(--radius);
+    padding:12px 14px; display:flex; align-items:center; gap:10px; cursor:pointer; background:var(--surface);
+  }
+  .radio-card:hover{ border-color:var(--primary); }
+  .radio-card input{ width:auto; margin:0; accent-color:var(--primary); }
+  .radio-card span{ font-size:0.9rem; font-weight:600; }
+  .radio-card.checked{ border-color:var(--primary); background:#EEF4FC; }
+
+  #provinceField{ margin-top:14px; display:none; }
+
+  .actions{ display:flex; gap:12px; margin-top:8px; flex-wrap:wrap; }
+  button{ font-family:inherit; cursor:pointer; border-radius:var(--radius); font-weight:700; font-size:0.92rem; }
+  .btn-primary{ background:var(--primary); color:#fff; border:none; padding:12px 24px; }
+  .btn-primary:hover{ background:var(--primary-dark); }
+  .btn-secondary{ background:var(--surface); color:var(--ink); border:1px solid var(--border-strong); padding:12px 22px; }
+  .btn-secondary:hover{ border-color:var(--primary); color:var(--primary); }
+
+  .success-banner{
+    display:none; background:var(--success-bg); border:1px solid #B7E0C9; color:var(--success);
+    padding:14px 16px; border-radius:var(--radius); font-size:0.9rem; font-weight:600; margin-bottom:22px;
+  }
+  .success-banner.show{ display:block; }
+
+  .char-count{ font-size:0.76rem; color:var(--ink-soft); text-align:right; margin-top:3px; }

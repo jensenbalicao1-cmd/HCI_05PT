@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Online Member User ID Registration</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="sss-styles.css">
+</head>
+<body>
+
+<div class="wrap">
+  <div class="masthead">
+    <div class="agency">Social Security System</div>
+    <h1>Online Member User ID Registration</h1>
+    <p>Please supply the following information as reported to the Social Security System. Fields marked with an asterisk are required to complete your registration.</p>
+  </div>
+
+  <div class="success-banner" id="successBanner">Your registration looks complete — review the summary and submit when you're ready.</div>
+
+  <div class="req-note"><span class="star">*</span> Required field</div>
+
+  <form id="regForm" novalidate>
+
+    <fieldset>
+      <legend>Personal Information</legend>
+
+      <div class="field" data-field="crn">
+        <label for="crn">CRN/SS Number <span class="star">*</span></label>
+        <input type="text" id="crn" inputmode="numeric" placeholder="Enter your 10–12 digit CRN/SS number" maxlength="12">
+        <p class="error-msg">Enter a valid CRN/SS number — 10 to 12 digits, numbers only.</p>
+      </div>
+
+      <div class="field" data-field="email">
+        <label for="email">Email Address <span class="star">*</span></label>
+        <input type="email" id="email" placeholder="you@example.com">
+        <p class="hint">If your email address is other than Yahoo.com, kindly inform your network administrator to block mail from <b>sss.gov.ph</b>.</p>
+        <p class="error-msg">Enter a valid email address.</p>
+      </div>
+
+      <div class="field" data-field="confirmEmail">
+        <label for="confirmEmail">Confirm Email Address <span class="star">*</span></label>
+        <input type="email" id="confirmEmail" placeholder="Re-enter your email address">
+        <p class="error-msg">This doesn't match your email address above.</p>
+      </div>
+
+      <div class="field" data-field="userId">
+        <label for="userId">Preferred User ID <span class="star">*</span></label>
+        <input type="text" id="userId" placeholder="e.g. Juan_Cruz1234" maxlength="20">
+        <p class="hint">8–20 characters. First character must be a letter. Letters, numbers, and underscore (_) only.</p>
+        <p class="error-msg">Check the format above — your User ID doesn't meet the requirements yet.</p>
+      </div>
+
+      <div class="field" data-field="confirmUserId">
+        <label for="confirmUserId">Confirm Preferred User ID <span class="star">*</span></label>
+        <input type="text" id="confirmUserId" placeholder="Re-enter your preferred User ID" maxlength="20">
+        <p class="error-msg">This doesn't match your Preferred User ID above.</p>
+      </div>
+
+      <div class="field" data-field="surname">
+        <label for="surname">Surname/Last Name <span class="star">*</span></label>
+        <input type="text" id="surname" placeholder="Enter your surname">
+        <p class="error-msg">Enter your surname.</p>
+      </div>
+
+      <div class="two-col">
+        <div class="field" data-field="givenName">
+          <label for="givenName">Given Name <span class="star">*</span></label>
+          <input type="text" id="givenName" placeholder="Enter your given name">
+          <p class="error-msg">Enter your given name.</p>
+        </div>
+        <div class="field" data-field="middleName">
+          <label for="middleName">Middle Name</label>
+          <input type="text" id="middleName" placeholder="Enter your middle name (optional)">
+        </div>
+      </div>
+
+      <div class="field" data-field="dob">
+        <label for="dob">Date of Birth <span class="star">*</span></label>
+        <input type="date" id="dob">
+        <p class="error-msg">Enter a valid date of birth — you must be at least 15 years old.</p>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Mailing Address (Philippine Address)</legend>
+
+      <div class="field">
+        <label for="unit">Room/Floor/Unit No. &amp; Building Name</label>
+        <input type="text" id="unit" placeholder="Enter room, floor, unit, or building name">
+      </div>
+      <div class="field">
+        <label for="houseLot">House/Lot &amp; Block No.</label>
+        <input type="text" id="houseLot" placeholder="Enter house, lot, or block number">
+      </div>
+      <div class="field">
+        <label for="street">Street</label>
+        <input type="text" id="street" placeholder="Enter street name">
+      </div>
+      <div class="field">
+        <label for="subdivision">Subdivision</label>
+        <input type="text" id="subdivision" placeholder="Enter subdivision or village">
+      </div>
+
+      <div class="field" data-field="location">
+        <label>Location <span class="star">*</span></label>
+        <div class="radio-group">
+          <label class="radio-card" id="cardMetro">
+            <input type="radio" name="location" value="metro" id="locMetro">
+            <span>Metro Manila</span>
+          </label>
+          <label class="radio-card" id="cardProvince">
+            <input type="radio" name="location" value="province" id="locProvince">
+            <span>Province</span>
+          </label>
+        </div>
+        <p class="error-msg">Choose Metro Manila or Province.</p>
+
+        <div class="field" id="provinceField" data-field="provinceName">
+          <label for="provinceName">Province Name <span class="star">*</span></label>
+          <input type="text" id="provinceName" placeholder="Enter your province">
+          <p class="error-msg">Enter your province.</p>
+        </div>
+      </div>
+    </fieldset>
+
+    <div class="actions">
+      <button type="submit" class="btn-primary">Submit Registration</button>
+      <button type="button" class="btn-secondary" id="clearBtn">Clear Form</button>
+    </div>
+  </form>
+</div>
+
+<script src="sss-script.js"></script>
+
+</body>
+</html>
